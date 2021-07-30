@@ -2,10 +2,8 @@ package com.hemebiotech.analytics;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.TreeMap;
-import java.util.Map;
 
 public class AnalyticsCounter {
 
@@ -26,14 +24,10 @@ public class AnalyticsCounter {
 				line = reader.readLine();
 			}
 			reader.close();
-
-			FileWriter writer = new FileWriter("result.out");
-			for (Map.Entry<String, Integer> traverse : data.entrySet()) {
-				writer.write(traverse.getKey() + ' ' + traverse.getValue() + '\n');
-			}
-			writer.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		new SymptomDataOutputConsole().out();
+		new SymptomDataOutputFile().out();
 	}
 }
