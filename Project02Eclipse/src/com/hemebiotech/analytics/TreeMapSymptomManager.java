@@ -5,10 +5,14 @@ import java.util.List;
 import java.util.Map.Entry;
 import java.util.ArrayList;
 
-public class SymptomDataManager {
+/**
+ * TreeMap implementation
+ */
+public class TreeMapSymptomManager implements ISymptomDataManager {
+
 	private TreeMap<String, Integer> symptomData;
 
-	public SymptomDataManager() {
+	public TreeMapSymptomManager() {
 		symptomData = new TreeMap<String, Integer>();
 	}
 
