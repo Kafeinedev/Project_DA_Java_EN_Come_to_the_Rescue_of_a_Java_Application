@@ -11,8 +11,9 @@ import java.util.List;
 public class SymptomDataFileWriter {
 
 	/**
-	 * @param dataToWrite List of string to write on a file each string will be
-	 *                    written on a new line, the list must be ordered
+	 * @param dataToWrite List of string containing a symptom and its count
+	 *                    separated by a delimiter. The list must be alphabetically
+	 *                    ordered by the symptoms.
 	 * 
 	 * @param filePath    Path of the file to create if a file already exist it will
 	 *                    be overwritten
@@ -26,6 +27,7 @@ public class SymptomDataFileWriter {
 			writer.close();
 		} catch (IOException e) {
 			e.printStackTrace();
+			System.exit(-1);
 		}
 	}
 }

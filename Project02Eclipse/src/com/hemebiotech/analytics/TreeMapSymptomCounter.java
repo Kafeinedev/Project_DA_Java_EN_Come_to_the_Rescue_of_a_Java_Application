@@ -8,30 +8,26 @@ import java.util.ArrayList;
 /**
  * TreeMap implementation
  */
-public class TreeMapSymptomManager implements ISymptomDataManager {
+public class TreeMapSymptomCounter implements ISymptomDataCounter {
 
 	private TreeMap<String, Integer> symptomData;
 
-	public TreeMapSymptomManager() {
+	public TreeMapSymptomCounter() {
 		symptomData = new TreeMap<String, Integer>();
 	}
 
-	public void addSingleSymptom(String symptom) {
-		Integer count = symptomData.get(symptom);
-		if (count != null) {
-			symptomData.put(symptom, count + 1);
-		} else {
-			symptomData.put(symptom, 1);
-		}
-	}
-
-	public void addSymptomData(List<String> rawData) {
+	public void countSymptoms(List<String> rawData) {
 		for (String symptom : rawData) {
-			addSingleSymptom(symptom);
+			Integer count = symptomData.get(symptom);
+			if (count != null) {
+				symptomData.put(symptom, count + 1);
+			} else {
+				symptomData.put(symptom, 1);
+			}
 		}
 	}
 
-	public List<String> getSymptomData() {
+	public List<String> getSymptomsCount() {
 		ArrayList<String> result = new ArrayList<String>();
 		for (Entry<String, Integer> it : symptomData.entrySet()) {
 			result.add(it.getKey() + " : " + it.getValue().toString());
