@@ -4,12 +4,12 @@ public class AnalyticsCounter {
 	public static void main(String args[]) {
 		ISymptomReader input = new ReadSymptomDataFromFile("symptoms.txt");
 
-		ISymptomDataCounter symptomCounter = new TreeMapSymptomCounter();
+		ISymptomDataCounter symptomCounter = new SymptomDataCounter();
 
 		symptomCounter.countSymptoms(input.getSymptoms());
 
-		input = null;
+		ISymptomCountedDataOutput output = new SymptomCountedDataFileWriter("result.out");
 
-		SymptomDataFileWriter.createOutputFile(symptomCounter.getSymptomsCount(), "result.out");
+		output.generateOutput(symptomCounter.getSymptomsCount());
 	}
 }

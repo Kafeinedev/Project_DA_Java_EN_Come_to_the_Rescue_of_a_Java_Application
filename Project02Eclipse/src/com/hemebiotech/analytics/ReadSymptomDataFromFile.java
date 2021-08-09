@@ -10,7 +10,7 @@ import java.util.List;
  * Simple brute force implementation
  *
  */
-final public class ReadSymptomDataFromFile implements ISymptomReader {
+public class ReadSymptomDataFromFile implements ISymptomReader {
 
 	private String filePath;
 
@@ -39,7 +39,6 @@ final public class ReadSymptomDataFromFile implements ISymptomReader {
 				reader.close();
 			} catch (IOException e) {
 				e.printStackTrace();
-				System.exit(-1);
 			}
 		}
 

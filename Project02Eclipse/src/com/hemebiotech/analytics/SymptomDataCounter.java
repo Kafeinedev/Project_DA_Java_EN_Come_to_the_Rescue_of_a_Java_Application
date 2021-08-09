@@ -8,11 +8,11 @@ import java.util.ArrayList;
 /**
  * TreeMap implementation
  */
-public class TreeMapSymptomCounter implements ISymptomDataCounter {
+public class SymptomDataCounter implements ISymptomDataCounter {
 
 	private TreeMap<String, Integer> symptomData;
 
-	public TreeMapSymptomCounter() {
+	public SymptomDataCounter() {
 		symptomData = new TreeMap<String, Integer>();
 	}
 
